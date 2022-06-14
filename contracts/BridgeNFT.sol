@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.12; 
+pragma solidity ^0.8.13; 
 
 /**
 * Required for ERC721 & ERC-721A while transaferring individual NFTs
