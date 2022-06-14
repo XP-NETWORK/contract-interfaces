@@ -14,7 +14,7 @@ contract TargetExampleContract is Ownable, ERC721Enumerable, BridgeNFT, MinterRo
         string memory name_, 
         string memory symbol_, 
         string memory baseURI_
-    ) ERC721(name_, symbol_) external {
+    ) ERC721(name_, symbol_){
         baseUri = baseURI_;
     }
 
