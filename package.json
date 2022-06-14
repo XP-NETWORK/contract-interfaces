@@ -1,0 +1,17 @@
+{
+  "name": "mapped-contracts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start":"tsc && node ./dist/index.js"
+  },
+  "dependencies": {
+    "@elrondnetwork/erdjs": "^10.2.5",
+    "@taquito/taquito": "^13.0.0",
+    "@temple-wallet/dapp": "^7.0.0",
+    "dotenv": "^16.0.1",
+    "ethers": "^5.6.8",
+    "xp.network": "git+https://github.com/xp-network/xpjs#bleeding-edge"
+  }
+}
