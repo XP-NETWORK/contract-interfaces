@@ -17,13 +17,21 @@ import {
 import { getNftInfo, ContractType } from "./nft_info";
 
 /**
- * Constants
+ * Constants imported from the environment:
  */
- const originContract:string = "";
- const targetContract:string = "";
- const uris: string[] = [
+const originContract: string = process.env.ORIGINAL_CONTRACT!;
+const targetContract: string = process.env.TARGET_CONTRACT!;
+const nftOwner: string = process.env.PK!;
+const tokenTicker: string = process.env.TOKEN_TICKER!;
+const contractName: string = process.env.CONTRACT_NAME!;
+
+/**
+* Set the Constants before running:
+*/
+const nftCounter: number = 0;
+const uris: string[] = [
     'https://meta.polkamon.com/meta?id=10001419693'
- ];
+];
 
 /**
  * NFT Object
@@ -34,19 +42,18 @@ const selected: NftInfo<any> = getNftInfo(
     // Chain of departure nonce
     Chain.BSC.toString(),
     // NFT ID
-    "0",
+    nftCounter.toString(),
     // NFT Owner
-    "0x0d7df42014064a163DfDA404253fa9f6883b9187",
+    nftOwner,
     // Original NFT smart contract
     originContract,
     // NFT contract token symbol
-    'UMT',
+    tokenTicker,
     // Collection Name
-    'UserNftMinter',
+    contractName,
     // Contract Type
     ContractType.ERC721
 );
-
 
 
 (async () => {
@@ -54,7 +61,7 @@ const selected: NftInfo<any> = getNftInfo(
     // Flags for running parts of the script:
     const shallMint = false;
     const shallApprove = false;
-    const shallTransfer = true;
+    const shallTransfer = false;
 
     // Creation of the testnet Factory
     const factory = ChainFactory(AppConfigs.TestNet(), await testnetConfig);
@@ -63,23 +70,22 @@ const selected: NftInfo<any> = getNftInfo(
     const bsc = await factory.inner(Chain.BSC);
     const polygon = await factory.inner(Chain.POLYGON);
 
-    if(shallMint){ // ======== MINTING ==============================
+    if (shallMint) { // ======== MINTING ==============================
         const mintingResult = await mint(bsc, uris, originContract, factory);
-        console.log("Minted:", mintingResult);
     }
 
-    if (shallApprove){ // ==== APPROVING ============================
+    if (shallApprove) { // ==== APPROVING ============================
         const signer = new Wallet(process.env.SK!, bsc.getProvider());
         const approved = await bsc.approveForMinter(selected, signer);
         console.log(`Approved: ${approved}`);
     }
 
-    if(shallTransfer){ // ==== TRANSFERRING =========================
+    if (shallTransfer) { // ==== TRANSFERRING =========================
         const result = await transferNft(
-            bsc, 
-            polygon, 
-            selected, 
-            factory, 
+            bsc,
+            polygon,
+            selected,
+            factory,
             targetContract
         );
         console.log("Transfer result:", result);
