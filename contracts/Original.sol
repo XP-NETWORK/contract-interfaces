@@ -8,7 +8,10 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 contract Original is ERC721URIStorage {
     uint256 public tokenId = 0;
 
-    constructor() ERC721("Original Contract Example", "OCE") {} // solhint-disable-line no-empty-blocks
+    constructor(
+        string memory name_, 
+        string memory symbol_
+    ) ERC721(name_, symbol_) {} // solhint-disable-line no-empty-blocks
 
     function mint(string calldata uri) external {
         _safeMint(msg.sender, tokenId);

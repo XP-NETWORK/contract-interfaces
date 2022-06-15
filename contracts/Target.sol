@@ -6,7 +6,7 @@ import "./Roles/Minter.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
-contract TargetExampleContract is Ownable, ERC721Enumerable, BridgeNFT, MinterRole {
+contract Target is Ownable, ERC721Enumerable, BridgeNFT, MinterRole {
     string public baseUri;
 
     // WARN: baseURI_ MUST be "/" suffixed
