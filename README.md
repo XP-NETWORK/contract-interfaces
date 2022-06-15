@@ -7,30 +7,19 @@ In order to meet the expectation of the Multi-Chain NFT bridge inherit from the 
 git clone https://github.com/XP-NETWORK/contract-interfaces.git
 cd contract-interfaces/
 yarn
+tsc
 ```
-
-## Contract deployment
-Use the contracts from this repository as templates. Add your business logic without breaking the templates.
-
-Deploy the contracts in Remix or with `hardhat`.
-
 ## Populate the environment variables
 Remove the `.example` from `.env.example` and populate with relevant data
+
+## Deploying the Original chain Contract
 ```
-# Signer's secret key
-SK=
+npx hardhat run --network <your chain name>  dist/scripts/deploy_original.js
+```
 
-# Receiver's public key (wallet address)
-PK=
-
-# Smart Contract Constants
-TOKEN_TICKER=
-CONTRACT_NAME="Your Collection Name Here"
-NFT_PREFIX=
-
-# Original & Target smart contract addresses:
-ORIGINAL_CONTRACT=
-TARGET_CONTRACT=
+## Deploying the Target Contract
+```
+npx hardhat run --network <your chain name>  dist/scripts/deploy_target.js
 ```
 
 ## Prerequisites for successful bridging
