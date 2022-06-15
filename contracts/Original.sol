@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
 // This is just as dummy contract for testing
 // DONT USE IN PRODUCTION!
-contract OriginalContractExample is ERC721URIStorage {
+contract Original is ERC721URIStorage {
     uint256 public tokenId = 0;
 
     constructor() ERC721("Original Contract Example", "OCE") {} // solhint-disable-line no-empty-blocks

@@ -3,3 +3,6 @@ node_modules
 *.DS_*
 dist
 yarn.lock
+artifacts/
+cache/
+typechain-types/
