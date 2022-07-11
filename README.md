@@ -94,3 +94,11 @@ After every minting, approving, and transferring cycle, increment the NFT ID [he
 
 ## 6. Success verification
 Verify your transactions in the chain explorers. To find the relevant transactions, query the explorers by the public keys of the sender on the chain of departure and the receiver's public key on the destination chain. Alternatively, you can check the most recent transactions of the contracts you deployed on the chain chains of origin and destination.
+
+## 7. Deploying ESDT tokens on Elrond
+
+Replace the contract [name](https://github.com/XP-NETWORK/contract-interfaces/blob/0d5f7e007e7a9c0cbc6dd2cff462f3eaf0f71bee/src/deploy_esdt.ts#L17) & [token ticker](https://github.com/XP-NETWORK/contract-interfaces/blob/0d5f7e007e7a9c0cbc6dd2cff462f3eaf0f71bee/src/deploy_esdt.ts#L18) in the script. And run the command in the terminal:
+
+```
+yarn deploy_esdt
+```
