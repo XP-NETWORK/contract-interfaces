@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "tsc && node ./dist/index.ts",
-    "build": "hardhat compile"
+    "build": "hardhat compile",
+    "deploy_esdt":"tsc && node ./dist/deploy_esdt.js"
   },
   "devDependencies":{
     "@nomiclabs/hardhat-ethers": "^2.0.2",
@@ -27,12 +28,12 @@
     "mocha": "^9.1.3",
     "solc": "^0.8.10",
     "solhint": "^3.3.6",
-    "ts-node": "^10.4.0",
+    "ts-node": "^10.7.0",
     "typechain": "^6.0.5",
     "typescript": "^4.5.2"
   },
   "dependencies": {
-    "@elrondnetwork/erdjs": "^10.2.5",
+    "@elrondnetwork/erdjs": "9.0.3",
     "@taquito/taquito": "^13.0.0",
     "@temple-wallet/dapp": "^7.0.0",
     "dotenv": "^16.0.1",
