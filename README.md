@@ -50,7 +50,29 @@ Provide the values for the constructor of the smart contract on the chain of des
  # Target Smart Contract Constants
  TARGET_NAME=Target
  TARGET_SYMBOL=TGT
- NFT_PREFIX=https://bridge-wnftapi.herokuapp.com/w/
+ 
+ # See Explanation below
+ NFT_PREFIX=https://<url-base>/w/<dec>/<chainId>/<original-contract-address>/
+```
+
+### Explanation:
+1. Replace the <url-base> with one of two options below:
+ - **Testnet** url base: `bridge-wnftapi.herokuapp.com`
+ - **Mainnet** url base: `nft.xp.network`
+2. Using `<dec>`
+ - use `dec` when mapping **ERC721** contracts since its ID is decimal
+ - skip `dec` when mapping **ERC1155** contracts since its tokens are converted to hex
+3. Replace `<chainId>` with the original chain ID from this document: [Bridge Chain Nonces](https://docs.xp.network/docs/Multibridge2.0/chain_nonces)
+4. Replace `<original-contract-address>` with the original contract address from the chain of departure
+
+### Testnet Example for ERC721 from Mumbai:
+```url
+https://bridge-wnftapi.herokuapp.com/w/dec/7/0xc7f53ece8654f61b47b6a8f0be6d6989cae422b1/
+```
+
+### Mainnet Example for ERC1155 from Polygon:
+```url
+https://nft.xp.network/w/7/0xc7f53ece8654f61b47b6a8f0be6d6989cae422b1/
 ```
 
 ## 2. Deploying the Original chain Contract
@@ -95,10 +117,3 @@ After every minting, approving, and transferring cycle, increment the NFT ID [he
 ## 6. Success verification
 Verify your transactions in the chain explorers. To find the relevant transactions, query the explorers by the public keys of the sender on the chain of departure and the receiver's public key on the destination chain. Alternatively, you can check the most recent transactions of the contracts you deployed on the chain chains of origin and destination.
 
-## 7. Deploying ESDT tokens on Elrond
-
-Replace the contract [name](https://github.com/XP-NETWORK/contract-interfaces/blob/0d5f7e007e7a9c0cbc6dd2cff462f3eaf0f71bee/src/deploy_esdt.ts#L17) & [token ticker](https://github.com/XP-NETWORK/contract-interfaces/blob/0d5f7e007e7a9c0cbc6dd2cff462f3eaf0f71bee/src/deploy_esdt.ts#L18) in the script. And run the command in the terminal:
-
-```
-yarn deploy_esdt
-```
