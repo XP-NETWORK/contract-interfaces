@@ -7,10 +7,12 @@ There are two ways of transferring NFTs via the XP.NETWORK Bridge.
 
 For a target contract to comply with the bridge expectations it MUST implement the following interfaces:
 
-1. [Bridge.sol](https://github.com/XP-NETWORK/contract-interfaces/blob/master/contracts/BridgeNFT.sol) for ERC721 standard
-2. 
+1. [BridgeNFT](https://github.com/XP-NETWORK/contract-interfaces/blob/master/contracts/BridgeNFT.sol) for ERC721 standard
+2. [BridgeNFTBatch](https://github.com/XP-NETWORK/contract-interfaces/blob/master/contracts/BridgeNFTBatch.sol) for ERC1155 standard
 
 The video below will walk you through the process of implementing the steps described below.
+
+https://www.youtube.com/watch?v=H5YuChS32YE&t
 
 ## 0. Installing the project
 
