@@ -5,11 +5,10 @@ There are two ways of transferring NFTs via the XP.NETWORK Bridge.
 1. The first option does not require coding or deploying smart contracts. The tokens can be sent from chain A to chain B using the existing infrastructure with minimal effort in a matter of minutes.<br/> However, in this case, the wrapped assets will arrive at the default smart contracts meeting the requirements of the token standards but will have a universal collection name, e.g., "Wrapped NFTs," and will be void of any custom logic, including royalties.
 2. To preserve a collection name or any business logic required for a game, a marketplace, a metaverse, a DeFi app, or a collection with royalties, deployment of custom smart contracts is required on the destination chain.
 
-This brief tutorial will show you how to write, deploy, set up, and test two contracts mapped by the XP.NETWORK bridge.
+For a target contract to comply with the bridge expectations it MUST implement the following interfaces:
 
-The contract templates enclosed in the repository barely support the functionality of mapped bridging. Any additional business logic is at the discretion of the NFT project.
-
-We recommend that all the smart contracts deployed on the mainnets undergo thorough testing in the testnets of the blockchains, followed by security audits by the industry-acknowledged auditing companies.
+1. [Bridge.sol](https://github.com/XP-NETWORK/contract-interfaces/blob/master/contracts/BridgeNFT.sol) for ERC721 standard
+2. 
 
 The video below will walk you through the process of implementing the steps described below.
 
