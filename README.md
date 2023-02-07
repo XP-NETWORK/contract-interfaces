@@ -53,7 +53,7 @@ Provide the values for the constructor of the smart contract on the chain of des
  TARGET_SYMBOL=TGT
  
  # See Explanation below
- NFT_PREFIX=https://<url-base>/w/<dec>/<chainId>/<original-contract-address>/
+ NFT_PREFIX=https://<url-base>/w/<dec>/<chainId>/<original-contract-address>/<{id} - only for ERC1155>
 ```
 
 ### Explanation:
@@ -65,6 +65,7 @@ Provide the values for the constructor of the smart contract on the chain of des
  - skip `dec` when mapping **ERC1155** contracts since its tokens are converted to hex
 3. Replace `<chainId>` with the original chain ID from this document: [Bridge Chain Nonces](https://docs.xp.network/docs/Multibridge2.0/chain_nonces)
 4. Replace `<original-contract-address>` with the original contract address from the chain of departure
+5. For ERC1155 add `{id}` after the trailing slash (se example below)
 
 ### Testnet Example for ERC721 from Mumbai:
 ```url
