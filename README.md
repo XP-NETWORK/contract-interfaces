@@ -73,7 +73,7 @@ https://bridge-wnftapi.herokuapp.com/w/dec/7/0xc7f53ece8654f61b47b6a8f0be6d6989c
 
 ### Mainnet Example for ERC1155 from Polygon:
 ```url
-https://nft.xp.network/w/7/0xc7f53ece8654f61b47b6a8f0be6d6989cae422b1/
+https://nft.xp.network/w/7/0xc7f53ece8654f61b47b6a8f0be6d6989cae422b1/{id}
 ```
 
 ## 2. Deploying the Original chain Contract
