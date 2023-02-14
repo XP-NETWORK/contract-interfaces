@@ -57,7 +57,7 @@ Provide the values for the constructor of the smart contract on the chain of des
 ```
 
 ### Explanation:
-1. Replace the <url-base> with one of two options below:
+1. Replace the `<url-base>` with one of two options below:
  - **Testnet** url base: `bridge-wnftapi.herokuapp.com`
  - **Mainnet** url base: `nft.xp.network`
 2. Using `<dec>`
