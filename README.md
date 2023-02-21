@@ -10,6 +10,8 @@ For a target contract to comply with the bridge expectations it MUST implement t
 1. [BridgeNFT](https://github.com/XP-NETWORK/contract-interfaces/blob/master/contracts/BridgeNFT.sol) for ERC721 standard
 2. [BridgeNFTBatch](https://github.com/XP-NETWORK/contract-interfaces/blob/master/contracts/BridgeNFTBatch.sol) for ERC1155 standard
 
+**NB!** The bridge contract must have a minter role to `mint` and `burn` tokens in the target contract.
+
 The video below will walk you through the process of implementing the steps described below.
 
 https://www.youtube.com/watch?v=H5YuChS32YE&t
